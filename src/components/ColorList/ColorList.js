@@ -9,7 +9,8 @@ const ColorBox = styled.div`
   row-gap: 20px;
 `;
 
-function ColorList({ colors, getCopiedColor }) {
+function ColorList({ colors, getCopiedColor, couldCopyAllPallettes }) {
+  console.log(couldCopyAllPallettes);
   return (
     <ColorBox>
       {colors.length &&
@@ -18,6 +19,7 @@ function ColorList({ colors, getCopiedColor }) {
             key={color.id}
             color={color}
             getCopiedColor={getCopiedColor}
+            couldCopyAllPallettes={couldCopyAllPallettes}
           />
         ))}
     </ColorBox>

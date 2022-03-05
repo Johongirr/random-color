@@ -15,7 +15,7 @@ const ColorCardOutput = styled.div`
   `}
 `;
 
-function ColorItem({ color, getCopiedColor }) {
+function ColorItem({ color, getCopiedColor, couldCopyAllPallettes }) {
   // console.log(color.palette);
   return (
     <ColorCard>

@@ -27,6 +27,7 @@ function App() {
   const [colors, setColor] = useState([]);
   const [copiedColor, setCopiedColor] = useState(null);
   const [randomColor, setRandomColor] = useState(false);
+  const [couldCopyAllPallettes, setCouldCopyAllPotes] = useState(false);
 
   useEffect(() => {
     console.log(randomColor);
@@ -41,7 +42,13 @@ function App() {
         e.preventDefault();
         getRandomColor(setColor);
         setCopiedColor(null);
+        setCouldCopyAllPotes(false);
+        return;
+      } else if (e.ctrlKey && (e.key === "c" || e.key === "C")) {
+        setCouldCopyAllPotes(true);
+        return;
       }
+      setCouldCopyAllPotes(false);
     });
   }, []);
   const generateRandomColor = () => setRandomColor(!randomColor);
@@ -54,7 +61,11 @@ function App() {
         <AppTitle>Random Color Palette Generator</AppTitle>
         <GenerateColorPalette generateRandomColor={generateRandomColor} />
         <Notification copiedColor={copiedColor} />
-        <ColorList colors={colors} getCopiedColor={getCopiedColor} />
+        <ColorList
+          couldCopyAllPallettes={couldCopyAllPallettes}
+          colors={colors}
+          getCopiedColor={getCopiedColor}
+        />
       </Wrapper>
     </AppBox>
   );
