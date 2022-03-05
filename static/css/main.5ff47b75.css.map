@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.5ff47b75.css","mappings":"AAAA,iBAKE,qBAAsB,CACtB,aAAwB,CAFxB,QAAS,CADT,SAIF","sources":["index.css"],"sourcesContent":["*,\n*::before,\n*::after {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  color: rgb(101, 59, 155);\n}"],"names":[],"sourceRoot":""}
